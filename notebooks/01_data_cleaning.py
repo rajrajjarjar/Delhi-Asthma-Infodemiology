@@ -29,9 +29,9 @@ from pathlib import Path
 # ----------------------------------------------------------------------
 # CONFIG - adjust paths if your folder structure differs
 # ----------------------------------------------------------------------
-RAW_PATH = Path("data/raw/cholera_epi_raw.csv")
-CLEAN_PATH = Path("data/clean/cholera_clean.csv")
-
+RAW_PATH = Path(
+    "./Data/Raw_data/Yemen Cholera Outbreak Epidemiology Data - Data_Governorate_Level.csv")
+CLEAN_PATH = Path("./Data/Clean/merged_clean-first.csv")
 # Mapping of raw (messy) governorate names -> standardized canonical name.
 # Anything not in this dict is assumed already-correct and passes through unchanged.
 GOVERNORATE_NAME_MAP = {
@@ -53,7 +53,8 @@ GOVERNORATE_NAME_MAP = {
 
 def load_raw(path: Path) -> pd.DataFrame:
     df = pd.read_csv(path)
-    print(f"[load_raw] Loaded {df.shape[0]} rows, {df.shape[1]} columns from {path}")
+    print(
+        f"[load_raw] Loaded {df.shape[0]} rows, {df.shape[1]} columns from {path}")
     return df
 
 
@@ -64,7 +65,8 @@ def standardize_governorate_names(df: pd.DataFrame) -> pd.DataFrame:
     )
     n_before = df["Governorate"].nunique()
     n_after = df["Governorate_clean"].nunique()
-    print(f"[standardize_governorate_names] {n_before} raw names -> {n_after} standardized governorates")
+    print(
+        f"[standardize_governorate_names] {n_before} raw names -> {n_after} standardized governorates")
     return df
 
 
@@ -78,7 +80,8 @@ def fix_dtypes(df: pd.DataFrame) -> pd.DataFrame:
         df[col] = pd.to_numeric(df[col], errors="coerce")
     n_nulls = df[["Cases", "Deaths"]].isnull().sum().sum()
     if n_nulls:
-        print(f"[fix_dtypes] WARNING: {n_nulls} values could not be parsed as numeric — inspect these rows")
+        print(
+            f"[fix_dtypes] WARNING: {n_nulls} values could not be parsed as numeric — inspect these rows")
     return df
 
 
@@ -120,16 +123,19 @@ def flag_and_fix_negative_diffs(df: pd.DataFrame) -> pd.DataFrame:
     df.loc[neg_mask, "New_Cases_flag"] = "corrected_negative"
     df.loc[neg_mask, "New_Cases"] = 0
 
-    print(f"[flag_and_fix_negative_diffs] {n_neg} negative-diff rows flagged and clipped to 0")
+    print(
+        f"[flag_and_fix_negative_diffs] {n_neg} negative-diff rows flagged and clipped to 0")
     if n_neg:
-        print(df.loc[neg_mask, ["Date", "Governorate", "Cases", "New_Cases_flag"]])
+        print(
+            df.loc[neg_mask, ["Date", "Governorate", "Cases", "New_Cases_flag"]])
     return df
 
 
 def run_quality_report(df: pd.DataFrame) -> None:
     print("\n===== DATA QUALITY REPORT =====")
     print("Shape:", df.shape)
-    print("Date range:", df["Date"].min().date(), "to", df["Date"].max().date())
+    print("Date range:", df["Date"].min().date(),
+          "to", df["Date"].max().date())
     print("Governorates:", df["Governorate"].nunique())
     print("\nRows per governorate (uneven counts = inconsistent reporting frequency):")
     print(df["Governorate"].value_counts().sort_index())

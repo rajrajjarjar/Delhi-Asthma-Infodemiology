@@ -23,8 +23,9 @@ Output:
 import pandas as pd
 from pathlib import Path
 
-RAW_PATH = Path("data/raw/cholera_epi_raw.csv")
-OUT_PATH = Path("data/clean/dates_cleaned.csv")
+RAW_PATH = Path(
+    "./Data/Raw_data/Yemen Cholera Outbreak Epidemiology Data - Data_Governorate_Level.csv")
+OUT_PATH = Path("./Data/clean/Only_cleaned-dates.csv")
 
 
 def clean_dates(df: pd.DataFrame) -> pd.DataFrame:
@@ -35,20 +36,24 @@ def clean_dates(df: pd.DataFrame) -> pd.DataFrame:
 
     n_bad = df["Date"].isna().sum()
     if n_bad:
-        print(f"[clean_dates] WARNING: {n_bad} rows had an unparseable date — inspect and fix manually")
+        print(
+            f"[clean_dates] WARNING: {n_bad} rows had an unparseable date — inspect and fix manually")
         print(df[df["Date"].isna()])
 
     # Check for duplicate (Date, Governorate) pairs — same governorate
     # reported twice on the same date usually signals a data entry issue
     dupes = df[df.duplicated(subset=["Date", "Governorate"], keep=False)]
     if len(dupes):
-        print(f"[clean_dates] WARNING: {len(dupes)} rows are duplicate (Date, Governorate) pairs")
+        print(
+            f"[clean_dates] WARNING: {len(dupes)} rows are duplicate (Date, Governorate) pairs")
         print(dupes.sort_values(["Governorate", "Date"]))
 
     df = df.sort_values(["Governorate", "Date"]).reset_index(drop=True)
 
-    print(f"[clean_dates] Date range: {df['Date'].min().date()} to {df['Date'].max().date()}")
-    print(f"[clean_dates] {df['Date'].nunique()} unique dates across the dataset")
+    print(
+        f"[clean_dates] Date range: {df['Date'].min().date()} to {df['Date'].max().date()}")
+    print(
+        f"[clean_dates] {df['Date'].nunique()} unique dates across the dataset")
 
     return df
 

@@ -25,8 +25,9 @@ Output:
 import pandas as pd
 from pathlib import Path
 
-RAW_PATH = Path("data/raw/cholera_epi_raw.csv")
-OUT_PATH = Path("data/clean/names_cleaned.csv")
+RAW_PATH = Path(
+    "./Data/Raw_data/Yemen Cholera Outbreak Epidemiology Data - Data_Governorate_Level.csv")
+OUT_PATH = Path("./Data/clean/Only_cleaned-names.csv")
 
 # Raw (messy) governorate name -> standardized canonical name.
 # Anything not listed here is assumed already-correct and passes through unchanged.
@@ -58,10 +59,12 @@ def clean_names(df: pd.DataFrame) -> pd.DataFrame:
         flag = "  -> " + mapped if name in GOVERNORATE_NAME_MAP else ""
         print(f"    {name!r}{flag}")
 
-    df["Governorate"] = df["Governorate"].map(GOVERNORATE_NAME_MAP).fillna(df["Governorate"])
+    df["Governorate"] = df["Governorate"].map(
+        GOVERNORATE_NAME_MAP).fillna(df["Governorate"])
 
     n_after = df["Governorate"].nunique()
-    print(f"\n[clean_names] Standardized down to {n_after} unique governorates")
+    print(
+        f"\n[clean_names] Standardized down to {n_after} unique governorates")
 
     # Warn if Mukalla/Sayun rows now share (Date, Governorate) with other
     # Hadramawt rows — since this script doesn't merge/sum, those stay as
