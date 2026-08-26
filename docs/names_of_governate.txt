@@ -1,0 +1,64 @@
+Total unique governorate names: 26
+
+Unique names:
+1. 'AL Mahrah'
+2. 'Abyan'
+3. 'Aden'
+4. 'Al Bayda'
+5. "Al Dhale'e"
+6. 'Al Hudaydah'
+7. 'Al Jawf'
+8. 'Al Maharah'
+9. 'Al Mahwit'
+10. 'Al-Hudaydah'
+11. 'Al_Jawf'
+12. 'Amanat Al Asimah'
+13. 'Amran'
+14. 'Dhamar'
+15. 'Hajjah'
+16. 'Ibb'
+17. 'Lahj'
+18. "Ma'areb"
+19. 'Marib'
+20. 'Moklla'
+21. 'Raymah'
+22. "Sa'ada"
+23. "Sana'a"
+24. "Say'on"
+25. 'Shabwah'
+26. 'Taizz'
+
+
+names with no.s of rows 
+
+Total rows: 2914
+Total unique Governorate values: 26
+
+Governorate values and their frequencies:
+------------------------------------------------------------
+'Amran'                             -> 136 rows
+'Al Mahwit'                         -> 136 rows
+"Al Dhale'e"                        -> 136 rows
+'Hajjah'                            -> 136 rows
+"Sana'a"                            -> 136 rows
+'Dhamar'                            -> 136 rows
+'Abyan'                             -> 136 rows
+'Al Bayda'                          -> 136 rows
+'Amanat Al Asimah'                  -> 136 rows
+'Raymah'                            -> 136 rows
+'Lahj'                              -> 136 rows
+'Aden'                              -> 136 rows
+'Ibb'                               -> 136 rows
+'Taizz'                             -> 136 rows
+"Sa'ada"                            -> 135 rows
+'Shabwah'                           -> 135 rows
+"Say'on"                            -> 108 rows
+'Moklla'                            -> 93 rows
+'Al Hudaydah'                       -> 82 rows
+'Al Jawf'                           -> 82 rows
+'Marib'                             -> 82 rows
+'Al Maharah'                        -> 82 rows
+'Al-Hudaydah'                       -> 54 rows
+'Al_Jawf'                           -> 54 rows
+"Ma'areb"                           -> 54 rows
+'AL Mahrah'                         -> 49 rows
