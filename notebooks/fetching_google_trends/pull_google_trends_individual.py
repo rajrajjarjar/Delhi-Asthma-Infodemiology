@@ -46,8 +46,10 @@ import pandas as pd
 from pathlib import Path
 from pytrends.request import TrendReq
 
-TERMS_PATH = Path("data/reference/google_trends_search_terms.csv")
-OUT_PATH = Path("data/raw/trends_raw_individual.csv")
+
+TERMS_PATH = Path(
+    "E:/Projects/BTP/notebooks/fetching_google_trends/google_trends_search_terms.csv")
+OUT_PATH = Path("E:/Projects/BTP/notebooks/data/raw/trends_raw_individual.csv")
 
 TIMEFRAME = "2017-05-22 2018-02-18"
 GEO = "YE"
@@ -58,7 +60,8 @@ MAX_RETRIES = 3
 
 def load_terms(path: Path) -> list[str]:
     df = pd.read_csv(path)
-    terms = pd.concat([df["english_term"], df["arabic_term"]]).dropna().unique().tolist()
+    terms = pd.concat([df["english_term"], df["arabic_term"]]
+                      ).dropna().unique().tolist()
     print(f"[load_terms] Loaded {len(terms)} unique terms")
     return terms
 
@@ -73,11 +76,13 @@ def pull_single_term(pytrends: TrendReq, term: str) -> pd.Series | None:
                 return None
             series = df[term]
             n_nonzero = (series != 0).sum()
-            print(f"    '{term}' -> {n_nonzero}/{len(series)} nonzero weeks, max={series.max()}")
+            print(
+                f"    '{term}' -> {n_nonzero}/{len(series)} nonzero weeks, max={series.max()}")
             return series
         except Exception as e:
             wait = SLEEP_BETWEEN_REQUESTS * attempt
-            print(f"    Attempt {attempt}/{MAX_RETRIES} failed ({e}) -- waiting {wait}s and retrying")
+            print(
+                f"    Attempt {attempt}/{MAX_RETRIES} failed ({e}) -- waiting {wait}s and retrying")
             time.sleep(wait)
     print(f"    FAILED after {MAX_RETRIES} attempts -- skipping '{term}'")
     return None
@@ -98,7 +103,8 @@ def main():
         time.sleep(SLEEP_BETWEEN_REQUESTS + random.uniform(0, 3))
 
     if not results:
-        print("[main] No data was successfully pulled at all -- see note below on next steps")
+        print(
+            "[main] No data was successfully pulled at all -- see note below on next steps")
         return
 
     merged = pd.DataFrame(results)
@@ -106,7 +112,8 @@ def main():
     merged = merged.reset_index()
     merged.to_csv(OUT_PATH, index=False)
 
-    print(f"\n[main] Saved {merged.shape[0]} weekly rows x {merged.shape[1]-1} terms to {OUT_PATH}")
+    print(
+        f"\n[main] Saved {merged.shape[0]} weekly rows x {merged.shape[1]-1} terms to {OUT_PATH}")
 
     numeric_cols = merged.columns.drop("Date")
     all_zero = numeric_cols[(merged[numeric_cols] == 0).all()]
