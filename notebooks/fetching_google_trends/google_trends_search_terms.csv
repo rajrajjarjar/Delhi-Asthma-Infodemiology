@@ -1,0 +1,31 @@
+category,english_term,arabic_term,transliteration,notes
+Direct disease term,cholera,كوليرا,kulira,Primary term - test this first, likely low baseline volume
+Direct disease term,cholera symptoms,أعراض الكوليرا,a'raad al-kulira,
+Direct disease term,cholera outbreak,تفشي الكوليرا,tafashi al-kulira,
+Direct disease term,epidemic,وباء,waba,Broader term - may pick up other disease news too
+Direct disease term,cholera Yemen,كوليرا اليمن,kulira al-yaman,Geo-qualified version worth testing
+Symptom term,diarrhea,إسهال,is'haal,Strong candidate - common standalone search
+Symptom term,watery diarrhea,إسهال مائي,is'haal maa'i,More specific to cholera presentation
+Symptom term,vomiting,قيء,qay',
+Symptom term,dehydration,جفاف,jafaf,Careful - "jafaf" also means drought in Arabic, may pick up noise
+Symptom term,stomach pain,ألم في المعدة,alam fi al-ma'ida,
+Symptom term,abdominal pain,ألم البطن,alam al-batn,
+Symptom term,fever,حمى,humma,Very generic - likely noisy, low priority
+Symptom term,watery stool,براز مائي,biraz maa'i,
+Treatment/care term,ORS,أملاح الإماهة الفموية,amlah al-imaha al-fammiyya,Formal term - test shorter colloquial version too
+Treatment/care term,oral rehydration solution,محلول الإماهة الفموية,mahlool al-imaha al-fammiyya,
+Treatment/care term,rehydration salts,أملاح الجفاف,amlah al-jafaf,More commonly searched short form
+Treatment/care term,IV drip,محلول وريدي,mahlool wareedy,
+Treatment/care term,nearest hospital,أقرب مستشفى,aqrab mustashfa,Good behavioral/panic proxy - people search this pre-visit
+Treatment/care term,health center,مركز صحي,markaz sihi,
+Treatment/care term,clinic,عيادة,iyada,Generic - likely noisy
+Prevention/hygiene term,clean water,مياه نظيفة,miyah nadhifa,
+Prevention/hygiene term,boil water,غلي الماء,ghali al-maa,Prevention-behavior proxy - spikes may precede or follow awareness campaigns
+Prevention/hygiene term,water purification,تنقية المياه,tanqiyat al-miyah,
+Prevention/hygiene term,chlorine tablets,أقراص الكلور,aqras al-kloor,
+Behavioral/panic term,is cholera contagious,هل الكوليرا معدية,hal al-kulira mu'diya,Strong panic-search signal
+Behavioral/panic term,cholera treatment,علاج الكوليرا,ilaj al-kulira,
+Behavioral/panic term,cholera prevention,الوقاية من الكوليرا,al-wiqaya min al-kulira,
+Behavioral/panic term,cholera vaccine,لقاح الكوليرا,laqah al-kulira,Relevant if vaccination campaigns occurred in your date range
+English-only baseline,ORS,ORS,,Test the raw English acronym too - may pick up NGO/aid-worker English usage in Yemen
+English-only baseline,cholera symptoms,,,English term as-is, for cross-check against Arabic volume
