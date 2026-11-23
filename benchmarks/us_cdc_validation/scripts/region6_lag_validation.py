@@ -35,6 +35,7 @@ OUTPUT FILES
 """
 
 import time
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -45,7 +46,9 @@ from scipy.stats import spearmanr
 # CONFIGURATION
 # ============================================================================
 
-CSV_FILE = 'E:/Projects/BTP/testing_files/fluuu/ILLnet2.2.csv'
+BASE_DIR = Path(__file__).resolve().parent.parent
+CSV_FILE = str(BASE_DIR / 'data' / 'ILLnet2.2.csv')
+OUTPUT_DIR = BASE_DIR / 'results' / 'per_state_lags'
 
 REGION = 'Region 6'
 
@@ -371,13 +374,14 @@ if __name__ == "__main__":
     print(best_lags.to_string(index=False))
 
     # --- Save everything with self-describing filenames ---
-    lag_curves.to_excel("R6_PerState_LagCurves.xlsx", index=False)
-    best_lags.to_excel("R6_BestLagPerState.xlsx", index=False)
-    merged.to_excel("R6_AlignedTimeSeries.xlsx", index=False)
-    volume_df.to_excel("R6_KeywordVolumeCheck.xlsx", index=False)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    lag_curves.to_excel(OUTPUT_DIR / "R6_PerState_LagCurves.xlsx", index=False)
+    best_lags.to_excel(OUTPUT_DIR / "R6_BestLagPerState.xlsx", index=False)
+    merged.to_excel(OUTPUT_DIR / "R6_AlignedTimeSeries.xlsx", index=False)
+    volume_df.to_excel(OUTPUT_DIR / "R6_KeywordVolumeCheck.xlsx", index=False)
 
     print("\nSaved:")
-    print("  R6_BestLagPerState.xlsx      <- headline result, read this first")
-    print("  R6_PerState_LagCurves.xlsx   <- full rho vs lag, for plotting")
-    print("  R6_AlignedTimeSeries.xlsx    <- week-by-week aligned data")
-    print("  R6_KeywordVolumeCheck.xlsx   <- check 'possibly_too_sparse' column")
+    print(f"  {OUTPUT_DIR / 'R6_BestLagPerState.xlsx'}      <- headline result, read this first")
+    print(f"  {OUTPUT_DIR / 'R6_PerState_LagCurves.xlsx'}   <- full rho vs lag, for plotting")
+    print(f"  {OUTPUT_DIR / 'R6_AlignedTimeSeries.xlsx'}    <- week-by-week aligned data")
+    print(f"  {OUTPUT_DIR / 'R6_KeywordVolumeCheck.xlsx'}   <- check 'possibly_too_sparse' column")

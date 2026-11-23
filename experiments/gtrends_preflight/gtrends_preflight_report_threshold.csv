@@ -1,0 +1,41 @@
+term,geo,status,zero_pct,mean,state_name,language
+flu,IN,OK,0.0,5.54,National,English
+flu,IN-DL,OK,0.0,3.23,Delhi,English
+flu,IN-UP,OK,0.0,2.77,Uttar Pradesh,English
+flu,IN-BR,OK,0.0,3.43,Bihar,English
+flu,IN-MH,OK,0.0,10.87,Maharashtra,English
+flu,IN-KL,OK,0.0,44.89,Kerala,English
+flu,IN-TN,OK,0.0,18.57,Tamil Nadu,English
+flu,IN-WB,OK,0.0,16.66,West Bengal,English
+fever,IN,OK,0.0,56.58,National,English
+fever,IN-DL,OK,0.0,47.58,Delhi,English
+fever,IN-UP,OK,0.0,50.98,Uttar Pradesh,English
+fever,IN-BR,OK,0.0,49.75,Bihar,English
+fever,IN-MH,OK,0.0,46.32,Maharashtra,English
+fever,IN-KL,OK,0.0,45.92,Kerala,English
+fever,IN-TN,OK,0.0,45.55,Tamil Nadu,English
+fever,IN-WB,OK,0.0,41.4,West Bengal,English
+cough,IN,OK,0.0,48.9,National,English
+cough,IN-DL,OK,0.0,38.92,Delhi,English
+cough,IN-UP,OK,0.0,50.08,Uttar Pradesh,English
+cough,IN-BR,OK,0.0,47.88,Bihar,English
+cough,IN-MH,OK,0.0,45.42,Maharashtra,English
+cough,IN-KL,OK,0.0,55.86,Kerala,English
+cough,IN-TN,OK,0.0,47.21,Tamil Nadu,English
+cough,IN-WB,OK,0.0,34.97,West Bengal,English
+viral fever,IN,OK,0.0,40.98,National,English
+viral fever,IN-DL,OK,4.2,23.11,Delhi,English
+viral fever,IN-UP,OK,0.4,23.44,Uttar Pradesh,English
+viral fever,IN-BR,OK,58.8,15.31,Bihar,English
+viral fever,IN-MH,OK,0.0,34.72,Maharashtra,English
+viral fever,IN-KL,OK,4.2,33.77,Kerala,English
+viral fever,IN-TN,OK,0.0,38.48,Tamil Nadu,English
+viral fever,IN-WB,OK,9.2,25.15,West Bengal,English
+बुखार,IN,OK,0.0,36.16,National,Hindi
+बुखार,IN-UP,OK,0.0,38.1,Uttar Pradesh,Hindi
+बुखार,IN-BR,OK,0.0,34.43,Bihar,Hindi
+बुखार,IN-DL,OK,4.6,39.23,Delhi,Hindi
+खांसी,IN,OK,0.0,50.51,National,Hindi
+खांसी,IN-UP,OK,0.0,49.0,Uttar Pradesh,Hindi
+खांसी,IN-BR,OK,0.8,46.67,Bihar,Hindi
+खांसी,IN-DL,OK,6.1,35.53,Delhi,Hindi

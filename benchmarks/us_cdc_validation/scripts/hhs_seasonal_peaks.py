@@ -25,9 +25,11 @@ import pandas as pd
 # ----------------------------------------------------------------------
 # CONFIG
 # ----------------------------------------------------------------------
-# the HHS Region ILINet export
-CSV_FILE = 'E:/Projects/BTP/testing_files/fluuu/ILLnet2.2.csv'
-OUTPUT_DIR = 'E:/Projects/BTP/testing_files/hhs_season peak'
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+CSV_FILE = str(BASE_DIR / 'data' / 'ILLnet2.2.csv')
+OUTPUT_DIR = str(BASE_DIR / 'results' / 'seasonal_peaks')
 
 # Fixed color per region so multiple charts stay visually consistent
 REGION_COLORS = {

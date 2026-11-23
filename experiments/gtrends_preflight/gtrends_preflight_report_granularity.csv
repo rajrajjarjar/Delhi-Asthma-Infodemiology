@@ -1,0 +1,3 @@
+term,geo,rows_5y_query,rows_16y_query,granularity_degraded
+flu,IN,262,193,True
+fever,IN,262,193,True

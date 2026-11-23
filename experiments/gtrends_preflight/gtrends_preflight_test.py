@@ -24,22 +24,33 @@ environment). Results are written to a report file, not consumed further -
 you read the report and decide whether to proceed.
 """
 
+from pathlib import Path
 import time
 import random
 import pandas as pd
 from pytrends.request import TrendReq
 
+CURRENT_DIR = Path(__file__).resolve().parent
+
 # ---- fill these in before running ----
 CANDIDATE_TERMS = ["flu", "fever", "cough", "viral fever"]   # English terms to test
+HINDI_TERMS = ["बुखार", "खांसी"]                             # Hindi pilot check terms
 CANDIDATE_STATES = {                                          # ISO 3166-2:IN codes
     "Delhi": "IN-DL",
+    "Uttar Pradesh": "IN-UP",
     "Bihar": "IN-BR",
-    "Kerala": "IN-KL",
     "Maharashtra": "IN-MH",
+    "Kerala": "IN-KL",
+    "Tamil Nadu": "IN-TN",
     "West Bengal": "IN-WB",
 }
+HINDI_BELT_STATES = {
+    "Uttar Pradesh": "IN-UP",
+    "Bihar": "IN-BR",
+    "Delhi": "IN-DL",
+}
 NATIONAL_GEO = "IN"
-report_output_path = ""   # where to save the CSV report
+report_output_path = str(CURRENT_DIR / "gtrends_preflight_report.csv")
 # ----------------------------------------
 
 pytrends = TrendReq(hl="en-US", tz=330)  # tz=330 = IST offset in minutes
@@ -142,28 +153,69 @@ def main():
     results_threshold = []
     results_granularity = []
 
-    print("=== 1. Threshold check (national + each candidate state) ===")
+    print("=== 1. Threshold check (National + Candidate States) ===")
     for term in CANDIDATE_TERMS:
-        results_threshold.append(check_threshold(term, NATIONAL_GEO))
+        print(f"Testing term (English): '{term}' ...")
+        r_nat = check_threshold(term, NATIONAL_GEO)
+        r_nat["state_name"] = "National"
+        r_nat["language"] = "English"
+        results_threshold.append(r_nat)
+        time.sleep(1)
+
         for state_name, geo_code in CANDIDATE_STATES.items():
             r = check_threshold(term, geo_code)
             r["state_name"] = state_name
+            r["language"] = "English"
             results_threshold.append(r)
-            time.sleep(1)  # small pause between calls to reduce rate-limit risk
+            time.sleep(1)
+
+    print("\n=== 1b. Hindi Pilot Check (Hindi Belt States) ===")
+    for term in HINDI_TERMS:
+        print(f"Testing term (Hindi): '{term}' ...")
+        r_nat = check_threshold(term, NATIONAL_GEO)
+        r_nat["state_name"] = "National"
+        r_nat["language"] = "Hindi"
+        results_threshold.append(r_nat)
+        time.sleep(1)
+
+        for state_name, geo_code in HINDI_BELT_STATES.items():
+            r = check_threshold(term, geo_code)
+            r["state_name"] = state_name
+            r["language"] = "Hindi"
+            results_threshold.append(r)
+            time.sleep(1)
 
     print("\n=== 2. Granularity check (5yr vs 16yr query) ===")
-    for term in CANDIDATE_TERMS[:1]:  # one term is enough to prove/disprove the trap
+    for term in CANDIDATE_TERMS[:2]:  # check 2 terms to prove granularity drop
+        print(f"Checking granularity for '{term}' ...")
         results_granularity.append(check_granularity(term, NATIONAL_GEO))
         time.sleep(1)
 
     print("\n=== 3. Pilot sanity check (last 3 months, national) ===")
     run_pilot_check(CANDIDATE_TERMS[0], NATIONAL_GEO)
 
-    # save the threshold + granularity results as a report to review
-    pd.DataFrame(results_threshold).to_csv(report_output_path.replace(".csv", "_threshold.csv"), index=False)
-    pd.DataFrame(results_granularity).to_csv(report_output_path.replace(".csv", "_granularity.csv"), index=False)
+    # Convert to DataFrames
+    df_thresh = pd.DataFrame(results_threshold)
+    df_gran = pd.DataFrame(results_granularity)
 
-    print("\nDone. Review the report CSVs before deciding whether to proceed.")
+    # Save reports
+    thresh_csv = report_output_path.replace(".csv", "_threshold.csv")
+    gran_csv = report_output_path.replace(".csv", "_granularity.csv")
+    df_thresh.to_csv(thresh_csv, index=False)
+    df_gran.to_csv(gran_csv, index=False)
+
+    print("\n" + "="*50)
+    print("PREFLIGHT SUMMARY - THRESHOLD CHECK:")
+    print("="*50)
+    print(df_thresh[["term", "state_name", "geo", "language", "status", "zero_pct", "mean"]].to_string(index=False))
+
+    print("\n" + "="*50)
+    print("PREFLIGHT SUMMARY - GRANULARITY CHECK:")
+    print("="*50)
+    print(df_gran.to_string(index=False))
+
+    print(f"\nReports saved successfully to:\n- {thresh_csv}\n- {gran_csv}")
+    print("\nDone. Review the findings before pulling the full 16-year time series.")
 
 
 if __name__ == "__main__":

@@ -20,8 +20,12 @@ import pandas as pd
 # ----------------------------------------------------------------------
 # CONFIG -- adjust the input path to wherever you saved the xlsx
 # ----------------------------------------------------------------------
-INPUT_FILE = 'R6_PerState_LagCurves.xlsx'
-OUTPUT_DIR = '.'   # change to a folder path if you want PNGs elsewhere
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+RESULTS_DIR = BASE_DIR / 'results' / 'per_state_lags'
+INPUT_FILE = str(RESULTS_DIR / 'R6_PerState_LagCurves.xlsx')
+OUTPUT_DIR = str(RESULTS_DIR)
 
 # Fixed colour per state so individual and combined plots stay consistent
 STATE_COLORS = {
