@@ -50,7 +50,7 @@ E:\Projects\BTP\
    - Weekly laboratory-confirmed influenza surveillance (`INF_A`, `INF_B`, `INF_ALL`), 2010–2026.
    - 1,152 weeks, 89.4% non-zero reporting.
 2. **Predictors:** Google Trends relative search volume (via `pytrends`).
-   - Queried per state (`IN-DL`, `IN-UP`, `IN-BR`, `IN-MH`, `IN-KL`, `IN-TN`, `IN-WB`).
+   - Queried per state (`IN-DL`, `IN-UP`, `IN-HR`, `IN-MH`, `IN-KL`, `IN-TN`, `IN-WB`) plus National baseline (`IN`).
    - Scaled using `youtube` anchor keyword to avoid seasonal distortions.
    - Pulled in $\le 5$-year chunks to preserve weekly resolution.
-   - Includes English and Hindi symptom keywords.
+   - Includes English and Hindi symptom keywords (Hindi in `IN-DL`, `IN-UP`, `IN-HR`).
