@@ -193,7 +193,7 @@ def main():
             comp = raw_composite(df)
             if comp is not None:
                 print(f"  Chunk {chunk_idx}: {len(comp)} weeks, "
-                      f"{len([c for c in df.columns if (df[c]!=0).any()])} active keywords, "
+                      f"{len([c for c in df.columns if (df[c] != 0).any()])} active keywords, "
                       f"mean={comp.mean():.4f}")
             chunk_composites.append(comp)
 
@@ -228,8 +228,10 @@ def main():
 
         print(f"  Stitched: {len(stitched_raw)} weeks "
               f"({stitched_raw.index.min().date()} → {stitched_raw.index.max().date()})")
-        print(f"  Raw range: [{stitched_raw.min():.4f}, {stitched_raw.max():.4f}]")
-        print(f"  Z-score range: [{stitched_z.min():.2f}, {stitched_z.max():.2f}]")
+        print(
+            f"  Raw range: [{stitched_raw.min():.4f}, {stitched_raw.max():.4f}]")
+        print(
+            f"  Z-score range: [{stitched_z.min():.2f}, {stitched_z.max():.2f}]")
         print(f"  Saved → {state_csv}")
 
         all_composites[state_name] = stitched_z
@@ -243,7 +245,8 @@ def main():
         print(f"\n{'='*60}")
         print(f"COMBINED: {combined_path}")
         print(f"Shape: {combined.shape}")
-        print(f"Range: {combined.index.min().date()} → {combined.index.max().date()}")
+        print(
+            f"Range: {combined.index.min().date()} → {combined.index.max().date()}")
 
     # Diagnostics
     if all_diagnostics:

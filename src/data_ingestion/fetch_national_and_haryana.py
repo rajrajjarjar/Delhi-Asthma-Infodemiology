@@ -66,10 +66,12 @@ def safe_fetch(pytrends, kw_list, geo, timeframe, max_retries=MAX_RETRIES):
             err_str = str(e)
             if "429" in err_str:
                 wait = PAUSE_ON_429 + random.uniform(2, 10)
-                print(f"    [429 RATE LIMIT] Waiting {wait:.0f}s before retry {attempt+1}/{max_retries}...")
+                print(
+                    f"    [429 RATE LIMIT] Waiting {wait:.0f}s before retry {attempt+1}/{max_retries}...")
             else:
                 wait = (2 ** attempt) + random.uniform(1, 3)
-                print(f"    [ERROR] {e} — retrying in {wait:.1f}s ({attempt+1}/{max_retries})")
+                print(
+                    f"    [ERROR] {e} — retrying in {wait:.1f}s ({attempt+1}/{max_retries})")
             time.sleep(wait)
             if "429" in err_str:
                 try:
@@ -85,7 +87,8 @@ def fetch_chunk(pytrends, geo, state_name, chunk_start, chunk_end):
     if geo in HINDI_GEOS:
         keywords.extend(HINDI_KEYWORDS)
 
-    batches = [keywords[i:i + MAX_KW_PER_REQUEST] for i in range(0, len(keywords), MAX_KW_PER_REQUEST)]
+    batches = [keywords[i:i + MAX_KW_PER_REQUEST]
+               for i in range(0, len(keywords), MAX_KW_PER_REQUEST)]
     all_normalised = {}
 
     for batch in batches:
@@ -94,13 +97,15 @@ def fetch_chunk(pytrends, geo, state_name, chunk_start, chunk_end):
         df = safe_fetch(pytrends, payload, geo=geo, timeframe=timeframe)
 
         if df is None:
-            print(f"    [WARN] No data returned for {state_name} {batch} in {timeframe}")
+            print(
+                f"    [WARN] No data returned for {state_name} {batch} in {timeframe}")
             continue
 
         anchor_series = df[ANCHOR_KW].astype(float)
         for kw in batch:
             if kw in df.columns:
-                all_normalised[kw] = df[kw].astype(float) / (anchor_series + 1.0)
+                all_normalised[kw] = df[kw].astype(
+                    float) / (anchor_series + 1.0)
 
         time.sleep(PAUSE_BETWEEN_REQUESTS)
 
@@ -121,10 +126,12 @@ def main():
         for idx, (c_start, c_end) in enumerate(CHUNKS):
             out_file = RAW_CHUNKS_DIR / f"{geo}_chunk{idx}.csv"
             if out_file.exists():
-                print(f"  Chunk {idx+1}/{len(CHUNKS)} already cached: {out_file.name}")
+                print(
+                    f"  Chunk {idx+1}/{len(CHUNKS)} already cached: {out_file.name}")
                 continue
 
-            print(f"  Fetching Chunk {idx+1}/{len(CHUNKS)}: {c_start} → {c_end}")
+            print(
+                f"  Fetching Chunk {idx+1}/{len(CHUNKS)}: {c_start} → {c_end}")
             df = fetch_chunk(pytrends, geo, name, c_start, c_end)
             if df is not None:
                 df.to_csv(out_file)
