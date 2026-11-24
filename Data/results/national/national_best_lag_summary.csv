@@ -1,0 +1,3 @@
+best_lag_weeks,spearman_rho,p_value,n_weeks,leads_or_trails,significant_p05,period
+-1,0.1524,0.0012412749071053256,446,TRAILS,True,pre_covid_2011_2019
+-2,0.3015,1.0095461937999155e-05,207,TRAILS,True,post_covid_2022_onward

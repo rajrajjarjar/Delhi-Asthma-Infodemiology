@@ -1,0 +1,4 @@
+period,direction,best_lag,best_f_stat,best_p_value,significant_lags_out_of_8,verdict,differenced
+pre_covid_2011_2019,GT -> FluNet,3,11.7631,2.0051249760005624e-07,8,GRANGER-CAUSES,False
+pre_covid_2011_2019,FluNet -> GT,2,12.3267,6.182487383019332e-06,8,GRANGER-CAUSES,False
+post_covid_2022_onward,GT -> FluNet,1,2.2819,0.1324322752097618,0,NO CAUSALITY,False

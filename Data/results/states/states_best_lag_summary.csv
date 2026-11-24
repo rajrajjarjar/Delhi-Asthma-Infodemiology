@@ -1,0 +1,15 @@
+best_lag_weeks,spearman_rho,p_value,n_weeks,leads_or_trails,significant_p05,state,period
+-5,0.3785,2.368485174576592e-08,204,TRAILS,True,Uttar Pradesh,post_covid_2022_onward
+-8,0.3093,7.89720930733834e-06,201,TRAILS,True,Delhi,post_covid_2022_onward
+3,0.2955,1.611861611123014e-05,206,LEADS,True,West Bengal,post_covid_2022_onward
+2,0.2941,1.693923478282737e-05,207,LEADS,True,Maharashtra,post_covid_2022_onward
+2,0.253,0.00023547993044177587,207,LEADS,True,Kerala,post_covid_2022_onward
+-7,0.2418,0.0005269216084481328,202,TRAILS,True,Haryana,post_covid_2022_onward
+-2,0.1904,0.0059863285909081115,207,TRAILS,True,Tamil Nadu,post_covid_2022_onward
+0,0.3587,5.093139281241961e-15,447,SYNCHRONOUS,True,Haryana,pre_covid_2011_2019
+0,0.3331,4.793627126889878e-13,447,SYNCHRONOUS,True,Kerala,pre_covid_2011_2019
+0,0.2892,4.636997902991047e-10,447,SYNCHRONOUS,True,Maharashtra,pre_covid_2011_2019
+0,0.2774,2.4344174262539657e-09,447,SYNCHRONOUS,True,Tamil Nadu,pre_covid_2011_2019
+0,0.1937,3.748389842066033e-05,447,SYNCHRONOUS,True,Delhi,pre_covid_2011_2019
+-8,0.1805,0.00014332511056984652,439,TRAILS,True,Uttar Pradesh,pre_covid_2011_2019
+-4,0.0571,0.23062596046760575,443,TRAILS,False,West Bengal,pre_covid_2011_2019

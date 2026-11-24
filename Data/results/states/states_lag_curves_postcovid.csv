@@ -1,0 +1,120 @@
+lag_weeks,spearman_rho,p_value,n_weeks,significant_p05,significant_p01,state,period
+-8,0.3093,7.89720930733834e-06,201,True,True,Delhi,post_covid_2022_onward
+-7,0.3075,8.523926962084991e-06,202,True,True,Delhi,post_covid_2022_onward
+-6,0.295,1.932868954327089e-05,203,True,True,Delhi,post_covid_2022_onward
+-5,0.2924,2.2018242033137223e-05,204,True,True,Delhi,post_covid_2022_onward
+-4,0.2658,0.00011722439678745477,205,True,True,Delhi,post_covid_2022_onward
+-3,0.2927,1.9554021548056053e-05,206,True,True,Delhi,post_covid_2022_onward
+-2,0.2799,4.416038360350297e-05,207,True,True,Delhi,post_covid_2022_onward
+-1,0.2503,0.00026659212247991305,208,True,True,Delhi,post_covid_2022_onward
+0,0.2482,0.0002913865596609002,209,True,True,Delhi,post_covid_2022_onward
+1,0.1894,0.006148557498808017,208,True,True,Delhi,post_covid_2022_onward
+2,0.1624,0.019394904846064234,207,True,False,Delhi,post_covid_2022_onward
+3,0.127,0.06900356307814781,206,False,False,Delhi,post_covid_2022_onward
+4,0.0644,0.35885748451257554,205,False,False,Delhi,post_covid_2022_onward
+5,-0.0062,0.9303082715879838,204,False,False,Delhi,post_covid_2022_onward
+6,-0.0232,0.7427425829343853,203,False,False,Delhi,post_covid_2022_onward
+7,-0.0254,0.7193818171954237,202,False,False,Delhi,post_covid_2022_onward
+8,-0.0491,0.4890049556888895,201,False,False,Delhi,post_covid_2022_onward
+-8,0.2093,0.002862610916095634,201,True,True,Haryana,post_covid_2022_onward
+-7,0.2418,0.0005269216084481328,202,True,True,Haryana,post_covid_2022_onward
+-6,0.2297,0.0009758779122302503,203,True,True,Haryana,post_covid_2022_onward
+-5,0.2037,0.0034774558383260782,204,True,True,Haryana,post_covid_2022_onward
+-4,0.1931,0.005546884916891363,205,True,True,Haryana,post_covid_2022_onward
+-3,0.1665,0.016771048748898888,206,True,False,Haryana,post_covid_2022_onward
+-2,0.0649,0.3525202187190214,207,False,False,Haryana,post_covid_2022_onward
+-1,0.0126,0.8569003870172519,208,False,False,Haryana,post_covid_2022_onward
+0,-0.0552,0.42756129281020105,209,False,False,Haryana,post_covid_2022_onward
+1,-0.1364,0.049436363603956805,208,True,False,Haryana,post_covid_2022_onward
+2,-0.1893,0.006300518205088706,207,True,True,Haryana,post_covid_2022_onward
+3,-0.2612,0.00014968085107738415,206,True,True,Haryana,post_covid_2022_onward
+4,-0.306,8.128122575063619e-06,205,True,True,Haryana,post_covid_2022_onward
+5,-0.343,5.110209673680126e-07,204,True,True,Haryana,post_covid_2022_onward
+6,-0.3617,1.1484816052473315e-07,203,True,True,Haryana,post_covid_2022_onward
+7,-0.3957,5.603069445894351e-09,202,True,True,Haryana,post_covid_2022_onward
+8,-0.3659,9.242478648063814e-08,201,True,True,Haryana,post_covid_2022_onward
+-8,0.3318,1.4920782354783314e-06,201,True,True,Uttar Pradesh,post_covid_2022_onward
+-7,0.371,5.483842211434729e-08,202,True,True,Uttar Pradesh,post_covid_2022_onward
+-6,0.3567,1.7583897340966095e-07,203,True,True,Uttar Pradesh,post_covid_2022_onward
+-5,0.3785,2.368485174576592e-08,204,True,True,Uttar Pradesh,post_covid_2022_onward
+-4,0.3297,1.3856817095829996e-06,205,True,True,Uttar Pradesh,post_covid_2022_onward
+-3,0.3332,9.873708402969327e-07,206,True,True,Uttar Pradesh,post_covid_2022_onward
+-2,0.3104,5.3223727657180775e-06,207,True,True,Uttar Pradesh,post_covid_2022_onward
+-1,0.3377,6.09156698494107e-07,208,True,True,Uttar Pradesh,post_covid_2022_onward
+0,0.2933,1.6384304940173425e-05,209,True,True,Uttar Pradesh,post_covid_2022_onward
+1,0.2361,0.0005962006732357093,208,True,True,Uttar Pradesh,post_covid_2022_onward
+2,0.1907,0.005904180104680824,207,True,True,Uttar Pradesh,post_covid_2022_onward
+3,0.1222,0.08016440545928173,206,False,False,Uttar Pradesh,post_covid_2022_onward
+4,0.0567,0.41912649338487123,205,False,False,Uttar Pradesh,post_covid_2022_onward
+5,-0.0187,0.7902038151916122,204,False,False,Uttar Pradesh,post_covid_2022_onward
+6,-0.0764,0.27877557278349774,203,False,False,Uttar Pradesh,post_covid_2022_onward
+7,-0.1092,0.12192365295936818,202,False,False,Uttar Pradesh,post_covid_2022_onward
+8,-0.1097,0.121057865971581,201,False,False,Uttar Pradesh,post_covid_2022_onward
+-8,0.1526,0.030563335273319055,201,True,False,Maharashtra,post_covid_2022_onward
+-7,0.1777,0.011401710973865546,202,True,False,Maharashtra,post_covid_2022_onward
+-6,0.1892,0.006870474693210866,203,True,True,Maharashtra,post_covid_2022_onward
+-5,0.2249,0.001218438058564647,204,True,True,Maharashtra,post_covid_2022_onward
+-4,0.2354,0.0006778392852149573,205,True,True,Maharashtra,post_covid_2022_onward
+-3,0.25,0.0002893372645712657,206,True,True,Maharashtra,post_covid_2022_onward
+-2,0.2492,0.00029268408786502383,207,True,True,Maharashtra,post_covid_2022_onward
+-1,0.2681,9.00870542157449e-05,208,True,True,Maharashtra,post_covid_2022_onward
+0,0.2727,6.477826211953029e-05,209,True,True,Maharashtra,post_covid_2022_onward
+1,0.2938,1.654401438228321e-05,208,True,True,Maharashtra,post_covid_2022_onward
+2,0.2941,1.693923478282737e-05,207,True,True,Maharashtra,post_covid_2022_onward
+3,0.2835,3.644272729227494e-05,206,True,True,Maharashtra,post_covid_2022_onward
+4,0.2668,0.00011035791045521538,205,True,True,Maharashtra,post_covid_2022_onward
+5,0.2032,0.0035621442339601756,204,True,True,Maharashtra,post_covid_2022_onward
+6,0.1677,0.01678684962212177,203,True,False,Maharashtra,post_covid_2022_onward
+7,0.095,0.17845715230711767,202,False,False,Maharashtra,post_covid_2022_onward
+8,0.0411,0.5621674185954907,201,False,False,Maharashtra,post_covid_2022_onward
+-8,0.1872,0.007802054417729792,201,True,True,Kerala,post_covid_2022_onward
+-7,0.178,0.011245202059206521,202,True,False,Kerala,post_covid_2022_onward
+-6,0.1831,0.008935301828819079,203,True,True,Kerala,post_covid_2022_onward
+-5,0.1922,0.005898750663426606,204,True,True,Kerala,post_covid_2022_onward
+-4,0.1794,0.010060510850707667,205,True,False,Kerala,post_covid_2022_onward
+-3,0.1966,0.004622855189119355,206,True,True,Kerala,post_covid_2022_onward
+-2,0.1901,0.006065627188797423,207,True,True,Kerala,post_covid_2022_onward
+-1,0.1928,0.005278724176403237,208,True,True,Kerala,post_covid_2022_onward
+0,0.1931,0.005080961125197502,209,True,True,Kerala,post_covid_2022_onward
+1,0.2376,0.0005495032734427793,208,True,True,Kerala,post_covid_2022_onward
+2,0.253,0.00023547993044177587,207,True,True,Kerala,post_covid_2022_onward
+3,0.2479,0.0003265148064608271,206,True,True,Kerala,post_covid_2022_onward
+4,0.223,0.0013123502090677094,205,True,True,Kerala,post_covid_2022_onward
+5,0.202,0.003765394910142839,204,True,True,Kerala,post_covid_2022_onward
+6,0.1716,0.014383453501196604,203,True,False,Kerala,post_covid_2022_onward
+7,0.1306,0.06403069223431644,202,False,False,Kerala,post_covid_2022_onward
+8,0.109,0.12342052345042753,201,False,False,Kerala,post_covid_2022_onward
+-8,0.1278,0.07057641136395854,201,False,False,Tamil Nadu,post_covid_2022_onward
+-7,0.1592,0.023640667269931567,202,True,False,Tamil Nadu,post_covid_2022_onward
+-6,0.1559,0.026391128145032673,203,True,False,Tamil Nadu,post_covid_2022_onward
+-5,0.181,0.00957327361269393,204,True,True,Tamil Nadu,post_covid_2022_onward
+-4,0.1687,0.015580976474696617,205,True,False,Tamil Nadu,post_covid_2022_onward
+-3,0.1894,0.006404200689618493,206,True,True,Tamil Nadu,post_covid_2022_onward
+-2,0.1904,0.0059863285909081115,207,True,True,Tamil Nadu,post_covid_2022_onward
+-1,0.1686,0.014888830576853952,208,True,False,Tamil Nadu,post_covid_2022_onward
+0,0.1439,0.03758391193447086,209,True,False,Tamil Nadu,post_covid_2022_onward
+1,0.1502,0.0302993145530846,208,True,False,Tamil Nadu,post_covid_2022_onward
+2,0.1527,0.028099928744724584,207,True,False,Tamil Nadu,post_covid_2022_onward
+3,0.109,0.11870770294233364,206,False,False,Tamil Nadu,post_covid_2022_onward
+4,0.078,0.2659882566473899,205,False,False,Tamil Nadu,post_covid_2022_onward
+5,0.0294,0.6768823045240265,204,False,False,Tamil Nadu,post_covid_2022_onward
+6,-0.0001,0.998678854175895,203,False,False,Tamil Nadu,post_covid_2022_onward
+7,-0.0502,0.478305505263422,202,False,False,Tamil Nadu,post_covid_2022_onward
+8,-0.0886,0.21101065352161757,201,False,False,Tamil Nadu,post_covid_2022_onward
+-8,0.1137,0.10791335449679343,201,False,False,West Bengal,post_covid_2022_onward
+-7,0.1434,0.04180970209175863,202,True,False,West Bengal,post_covid_2022_onward
+-6,0.1498,0.03287523865088286,203,True,False,West Bengal,post_covid_2022_onward
+-5,0.1961,0.004935663919672284,204,True,True,West Bengal,post_covid_2022_onward
+-4,0.2177,0.0017120695548866374,205,True,True,West Bengal,post_covid_2022_onward
+-3,0.2121,0.0022085261874105976,206,True,True,West Bengal,post_covid_2022_onward
+-2,0.219,0.001519808252369388,207,True,True,West Bengal,post_covid_2022_onward
+-1,0.2288,0.0008875950230913289,208,True,True,West Bengal,post_covid_2022_onward
+0,0.2293,0.0008395444975276592,209,True,True,West Bengal,post_covid_2022_onward
+1,0.2617,0.0001340466851155154,208,True,True,West Bengal,post_covid_2022_onward
+2,0.2925,1.8983003266321923e-05,207,True,True,West Bengal,post_covid_2022_onward
+3,0.2955,1.611861611123014e-05,206,True,True,West Bengal,post_covid_2022_onward
+4,0.2573,0.00019550423922188966,205,True,True,West Bengal,post_covid_2022_onward
+5,0.2185,0.0016874086920419956,204,True,True,West Bengal,post_covid_2022_onward
+6,0.1583,0.024131308574066847,203,True,False,West Bengal,post_covid_2022_onward
+7,0.1357,0.05411114543984651,202,False,False,West Bengal,post_covid_2022_onward
+8,0.0606,0.3930345460238438,201,False,False,West Bengal,post_covid_2022_onward

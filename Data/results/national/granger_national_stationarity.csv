@@ -1,0 +1,5 @@
+series,adf_statistic,p_value,lags_used,n_obs,critical_1pct,critical_5pct,critical_10pct,stationary_at_5pct
+GT_National_PreCOVID (level),-5.1892,9e-06,2,444,-3.4452,-2.8681,-2.5702,True
+FluNet_PreCOVID (level),-6.2475,0.0,3,443,-3.4452,-2.8681,-2.5703,True
+GT_National_PostCOVID (level),-3.3686,0.012077,0,208,-3.4622,-2.8755,-2.5742,True
+FluNet_PostCOVID (level),-4.8546,4.3e-05,0,208,-3.4622,-2.8755,-2.5742,True
